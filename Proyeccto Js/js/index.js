@@ -85,4 +85,107 @@
 //}
 
 //}
+//                                              Pre Entrga N2                                     ///
+function saludar (){
+    console.log ("Bienvenido a Deviajes.com");
+}
+  saludar();
 
+  function solicitarDestino (){
+    let destinoIngresado = prompt("Ingrese destino")
+    alert ("El destino Seleccionado es " + destinoIngresado)
+  }
+
+  solicitarDestino ();
+
+  function paquetesViajes (parametro1, parametro2){
+ console.log (parametro1 + " " + parametro2);
+  }
+paquetesViajes ("Eligio", "Asia");
+paquetesViajes ("Eligio", "Europa");
+
+// Calculando Cuotas
+function dividir (primerNumero, segundoNumero){
+    resultado = primerNumero / segundoNumero
+}
+function mostrar (mensaje){
+    console.log(mensaje)
+}
+
+dividir (1350, 18);
+mostrar (resultado);
+
+//Calculando IVA paquetes y descuentos
+const suma = (a,b) => a + b
+const resta = (a,b) => a - b
+const iva = x => x * 0.21
+let precioPaquete = 1000
+let descuento = 50 
+let precioDescuento = resta(suma(precioPaquete, iva(precioPaquete)), descuento)
+console.log (precioDescuento)
+
+//objetos
+
+let paquete = "Africa Salvaje";
+let precio = 1200;
+let salidas = "vuelos desde Barcelona y Madrid";
+ const Ofertas = {paquete: "Africa Salvaje", precio: "1200", salidas: "vuelos desde Barcelona y Madrid"
+}
+console.log (Ofertas.paquete)
+console.log (Ofertas.precio)
+console.log (Ofertas.salidas)
+
+function cholloViajes (destino, precio, salidas){
+    this.destino = destino;
+    this.precio = precio;
+    this.salidas = salidas;
+}
+const paquete1 = new cholloViajes ("Tailandia sorprendente", "750", "Vuelos desde Barcelona y Madrid");
+const paquete2 = new cholloViajes ("Italia Paradisso", "1500", "vuelos desde Barcelona");
+console.log (paquete2);
+
+const paquete3 ={ pais: "Africa Salvaje", CuotasDisponibles :"12", precioFinal: "1200"};
+console.log ("pais" in paquete3);
+console.log ("salidas" in paquete3);
+for(const propiedad in paquete3){
+    console.log(paquete3 [propiedad]);
+}
+//  Clase producto//
+class producto {
+    constructor (destino, precio){
+        this.destino = destino.toUpperCase();
+        this.precio = parseFloat(precio);
+        this.disponibilidad = false;
+
+    }
+    sumaIVA(){
+        this.precio = this.precio * 1.21;
+
+    }
+    venta (){
+        this.disponibilidad = true;
+
+    }
+}
+
+const destino1 = new producto ("Tailandia Sorprendente", "800");
+const destino2 = new producto ("Italia Paradisso", "1200");
+destino1.sumaIVA();
+destino2.sumaIVA();
+destino1.venta();
+
+
+/// Arrays //
+
+
+const listaDestinos = [];
+let cantidad = 6;
+do{
+    let entrada = prompt ("Ingrese destino");
+    listaDestinos.push(entrada.toUpperCase());
+    console.log(listaDestinos.length);
+
+}while (listaDestinos.length != cantidad)
+
+const nuevoDestino = listaDestinos.concat (["Egipto"]);
+alert(nuevoDestino.join("/n"));
