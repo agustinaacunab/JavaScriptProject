@@ -98,22 +98,18 @@ function saludar (){
 
   solicitarDestino ();
 
-  function paquetesViajes (parametro1, parametro2){
- console.log (parametro1 + " " + parametro2);
-  }
-paquetesViajes ("Eligio", "Asia");
-paquetesViajes ("Eligio", "Europa");
-
 // Calculando Cuotas
-function dividir (primerNumero, segundoNumero){
-    resultado = primerNumero / segundoNumero
-}
-function mostrar (mensaje){
-    console.log(mensaje)
+function dividir(primerNumero, segundoNumero) {
+    var resultado = primerNumero / segundoNumero;
+    return resultado; 
 }
 
-dividir (1350, 18);
-mostrar (resultado);
+function mostrar(mensaje) {
+    console.log(mensaje);
+}
+
+var resultadoDivison = dividir(1350, 18);
+mostrar(resultadoDivison); 
 
 //Calculando IVA paquetes y descuentos
 const suma = (a,b) => a + b
@@ -135,13 +131,13 @@ console.log (Ofertas.paquete)
 console.log (Ofertas.precio)
 console.log (Ofertas.salidas)
 
-function cholloViajes (destino, precio, salidas){
+function viajesDePromo (destino, precio, salidas){
     this.destino = destino;
     this.precio = precio;
     this.salidas = salidas;
 }
-const paquete1 = new cholloViajes ("Tailandia sorprendente", "750", "Vuelos desde Barcelona y Madrid");
-const paquete2 = new cholloViajes ("Italia Paradisso", "1500", "vuelos desde Barcelona");
+const paquete1 = new viajesDePromo ("Tailandia sorprendente", "750", "Vuelos desde Barcelona y Madrid");
+const paquete2 = new viajesDePromo ("Italia Paradisso", "1500", "vuelos desde Barcelona");
 console.log (paquete2);
 
 const paquete3 ={ pais: "Africa Salvaje", CuotasDisponibles :"12", precioFinal: "1200"};
@@ -189,3 +185,16 @@ do{
 
 const nuevoDestino = listaDestinos.concat (["Egipto"]);
 alert(nuevoDestino.join("/n"));
+
+//7
+
+const cruceros = [
+    { nombre: 'Italia', precio: 1500 },
+    { nombre: 'Sudeste Asiatico', precio: 2200 },
+];
+
+const resultado = cruceros.find((el) => el.nombre === "Italia Paradisso");
+const resultado2 = cruceros.find((el) => el.nombre === "Sudeste Asiatico");
+
+console.log(resultado); 
+console.log(resultado2); 
