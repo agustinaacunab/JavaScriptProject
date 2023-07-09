@@ -189,7 +189,7 @@ alert(nuevoDestino.join("/n"));
 //7
 
 const cruceros = [
-    { nombre: 'Italia', precio: 1500 },
+    { nombre: 'Italia Paradisso', precio: 1500 },
     { nombre: 'Sudeste Asiatico', precio: 2200 },
 ];
 
