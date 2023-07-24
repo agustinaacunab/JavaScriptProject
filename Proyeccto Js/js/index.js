@@ -129,10 +129,8 @@ listadoPromos.appendChild(divRow)
 let parrafo2 = document.querySelector("#prueba p")
 let prueba = document.querySelector("#prueba")
 let radioChecked = document.querySelector(".radio:checked")
-//let input =document.querySelectorAll('input')
-//console.log(input)
 
-//Clase 10 -
+
 //eventos del mouse
 let boton = document.getElementById("btnMain");
 boton.onclick = () => { console.log("click"); };
@@ -140,15 +138,80 @@ boton.onmousemove = () => { console.log("move"); };
 
 //formulario
 
-let miFormularioB = document.getElementById('formulario')
-miFormularioB.onsubmit = (evt)=>{
-    evt.preventDeFault()
-    let form = evt.target
+let miFormularioPresupuesto = document.getElementById('formulario')
+function validarFormulario(evt) {
+    evt.preventDefault(); // Cambiar preventDeFault() a preventDefault()
+    alert('Presupuesto solicitado');
+  }
+  
 
-    console.log(form.children[0].value)
-    console.log(form.children[1].value)
-    console.log(form.children[2].value)
-    console.log(form.children[3].value)
-    console.log(form.children[4].value)
-    console.log(form.children[5].value)
+localStorage.setItem('Bienvenida','Bienvenidos a Deviajes.com');
+localStorage.setItem('esValido', 'true');
+localStorage.setItem('unNumero',2023);
+
+
+let mensaje = localStorage.getItem('Bienvenida');
+let bandera = localStorage.getItem('esValido');
+let numero = localStorage.getItem('unNumero');
+
+sessionStorage.getItem('seleccion',[1,2,3]);
+sessionStorage.getItem('esCorrecto', 'false');
+sessionStorage.getItem('email', 'info@email.com');
+
+let seleccion = JSON.parse(sessionStorage.getItem('seleccion')); // Convierte la cadena a una matriz
+let banderA = sessionStorage.getItem('esCorrecto') === 'true'; // Compara directamente con true o false
+let email = sessionStorage.getItem('email');
+
+console.log(typeof seleccion);
+console.log(typeof banderA);
+console.log(typeof email);
+
+
+
+//Ciclo para recorrer las claves almacenadas en el objeto localStorage
+for (let i = 0; i < localStorage.length; i++) {
+    let clave = localStorage.key(i);
+    console.log("Clave: "+ clave);
+    console.log("Valor: "+ localStorage.getItem(clave));
 }
+localStorage.setItem('bienvenida', '¡Has llegado al primer paso de tus vacaciones!');
+sessionStorage.setItem('esValido', true);
+
+//localStorage.removeItem('bienvenida');
+//sessionStorage.removeItem('esValido');
+//localStorage.clear()    //elimino toda la info
+//sessionStorage.clear() //elimino toda la info
+
+
+const producto1 = { id: 2, producto: "Tailandia Sorprendente" };
+const producto1JSON    = JSON.stringify(producto1);
+
+console.log(producto1JSON); 
+console.log(typeof producto1); 
+console.log(typeof producto1JSON);  
+localStorage.setItem("producto1", producto1);
+localStorage.setItem("producto1", producto1JSON);
+
+const guardarDestinoLocal = (clave, valor) => {localStorage.setItem(clave,valor)}
+//Almacenar producto por producto
+for (const promo of promos) {
+    guardarDestinoLocal(promo.id, JSON.stringify(promo));
+}
+
+class Paquetes {
+    constructor(obj){
+        this.nomnbre = obj.producto.toUpperCase();
+        this.precio = parseFloat(obj.precio);
+    }
+    sumaIVA(){
+        this.precio = this.precio * 1.21;
+    }
+}
+
+//obtener listado de productos almacenados
+
+//const almacenados = JSON.parse(localStorage.getItem("listaPromos"));
+//const productos = [];
+
+//for (const objeto of almacenados)
+//productos.push(new Producto(objeto));

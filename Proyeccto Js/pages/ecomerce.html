@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="app">Proyecto Final JS</title>
     <link rel="stylesheet" href="../css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
 </head>
 <body>
    <h1 id="titulo" class="Inicio">Bienvenido</h1>
@@ -59,7 +61,7 @@
     inputDestination.oninput = (evt) => {console.log ('input; ', evt.value)}
    </script>
 <div class="FORM-DEV">
-   <form id="formulario">
+   <form id="formularioPresupuesto">
     <p>Indique pais de salida</p>
     <input id="Salida" type="text" name="paisSalida">
     <p>Indique horario de Salida</p>
@@ -77,26 +79,30 @@
    </form>
 </div>
 
+   
    <script>
-    let miFormulario = document.getElementById ('formulario')
+    
+     let miFormulario = document.getElementById ('formularioPresupuesto')
     miFormulario.addEventListener('submit', validarFormulario)
     function validarFormulario (evt){
         evt.preventDeFault()
         alert ('Presupuesto solicitado')
     }
+    
     let boton2 = document.getElementById("btnFormulario")
     boton2.addEventListener("click", respuestaClick)
     function respuestaClick (){
         console.log("Presupuesto enviado");
         alert ('Presupuesto Solicitado. Se le contactara a la brevedad');
     }
+
    </script>
 <script>
     let boton1 = document.getElementById("btnPrincipal")
     boton1.addEventListener("click", respuestaClick)
     function respuestaClick (){
         console.log("Ha agregado un elemento al carrito");
-        alert('Agregado al carrito de compras');
+        alert('Excursion Agregada al carrito de compras');
 
     }
 
